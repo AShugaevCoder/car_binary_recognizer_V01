@@ -22,14 +22,13 @@ SAVE_MODEL_ONNX = True
 
 class NeuralNetwork(nn.Module):
     """
-    Класс нейронной сети. Три полностью связанных слоя. Функция потерь - leaky_relu.
+    Класс нейронной сети. Два полностью связанных слоя. Функция потерь - leaky_relu.
     """
     def __init__(self):
         super().__init__()
 
         # fc => fully connected; 64 * 64 = 4096
         self.fcLayers = nn.ModuleList([
-            nn.Linear(4096, 4096),
             nn.Linear(4096, 4096),
             nn.Linear(4096, 2),
         ])
